@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photo Viewer and Downloader</title>
+</head>
+<body>
+
+<img id="photo" src="images/logo/logo.png" alt="Photo" width="400" height="300">
+
+<button id="downloadButton">Download Photo</button>
+
+<script>
+  const photo = document.getElementById('photo');
+  const downloadButton = document.getElementById('downloadButton');
+
+  downloadButton.addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.href = photo.src;
+    link.download = 'images/logo/logo.png';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+</script>
+
+</body>
+</html>
